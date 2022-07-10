@@ -3,12 +3,13 @@ from data_readers import LoadTestData
 import logging
 import pdb
 
+
 class MySeqTask(SequentialTaskSet):
 
     @task
     def place_order(self):
-        test_data = LoadTestData.read_csv_data("/Volumes/Development/study-guide/distributed-automation-platform/api_automation_framework/payloads/csv_payload/customer-data.csv")
-        print(test_data)
+        test_data = LoadTestData.read_csv_data(
+            "/Volumes/Development/study-guide/distributed-automation-platform/api_automation_framework/payloads/csv_payload/customer-data.csv")
 
         data = {
             "custname": test_data['name'],
